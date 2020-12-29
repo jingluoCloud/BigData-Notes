@@ -28,7 +28,7 @@ Apache Spark 具有以下特点：
 + 丰富的部署模式：支持本地模式和自带的集群模式，也支持在 Hadoop，Mesos，Kubernetes 上运行；
 + 多数据源支持：支持访问 HDFS，Alluxio，Cassandra，HBase，Hive 以及数百个其他数据源中的数据。
 
-<div align="center"> <img width="600px" src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/future-of-spark.png"/> </div>
+<div align="center"> <img width="600px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/future-of-spark.png"/> </div>
 
 ## 三、集群架构
 
@@ -41,19 +41,19 @@ Apache Spark 具有以下特点：
 | Executor        | 位于工作节点上的应用进程，负责执行计算任务并且将输出数据保存到内存或者磁盘中 |
 | Task            | 被发送到 Executor 中的工作单元                                 |
 
-<div align="center"> <img src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/spark-集群模式.png"/> </div>
+<div align="center"> <img src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/spark-集群模式.png"/> </div>
 
 **执行过程**：
 
 1. 用户程序创建 SparkContext 后，它会连接到集群资源管理器，集群资源管理器会为用户程序分配计算资源，并启动 Executor；
-2. Dirver 将计算程序划分为不同的执行阶段和多个 Task，之后将 Task 发送给 Executor；
+2. Driver 将计算程序划分为不同的执行阶段和多个 Task，之后将 Task 发送给 Executor；
 3. Executor 负责执行 Task，并将执行状态汇报给 Driver，同时也会将当前节点资源的使用情况汇报给集群资源管理器。
 
 ## 四、核心组件
 
 Spark 基于 Spark Core 扩展了四个核心组件，分别用于满足不同领域的计算需求。
 
-<div align="center"> <img  width="600px" src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/spark-stack.png"/> </div>
+<div align="center"> <img  width="600px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/spark-stack.png"/> </div>
 
 ### 3.1 Spark  SQL
 
@@ -69,11 +69,11 @@ Spark SQL 主要用于结构化数据的处理。其具有以下特点：
 
 Spark Streaming 主要用于快速构建可扩展，高吞吐量，高容错的流处理程序。支持从 HDFS，Flume，Kafka，Twitter 和 ZeroMQ 读取数据，并进行处理。
 
-<div align="center"> <img width="600px" src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/spark-streaming-arch.png"/> </div>
+<div align="center"> <img width="600px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/spark-streaming-arch.png"/> </div>
 
  Spark Streaming 的本质是微批处理，它将数据流进行极小粒度的拆分，拆分为多个批处理，从而达到接近于流处理的效果。
 
-<div align="center"> <img width="600px"   src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/spark-streaming-flow.png"/> </div>
+<div align="center"> <img width="600px"   src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/spark-streaming-flow.png"/> </div>
 
 
 
@@ -92,3 +92,6 @@ MLlib 是 Spark 的机器学习库。其设计目标是使得机器学习变得�
 GraphX 是 Spark 中用于图形计算和图形并行计算的新组件。在高层次上，GraphX 通过引入一个新的图形抽象来扩展 RDD(一种具有附加到每个顶点和边缘的属性的定向多重图形)。为了支持图计算，GraphX 提供了一组基本运算符（如： subgraph，joinVertices 和 aggregateMessages）以及优化后的 Pregel API。此外，GraphX 还包括越来越多的图形算法和构建器，以简化图形分析任务。
 
 ##   
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>

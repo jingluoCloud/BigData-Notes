@@ -6,7 +6,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1-ResourceManager">1. ResourceManager</a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2-NodeManager">2. NodeManager</a><br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#3-ApplicationMaster">3. ApplicationMaster </a><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-Contain">4. Contain</a><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#4-Container">4. Container</a><br/>
 <a href="#三YARN工作原理简述">三、YARN工作原理简述</a><br/>
 <a href="#四YARN工作原理详述">四、YARN工作原理详述</a><br/>
 <a href="#五提交作业到YARN上运行">五、提交作业到YARN上运行</a><br/>
@@ -18,13 +18,13 @@
 
 **Apache YARN** (Yet Another Resource Negotiator)  是 hadoop 2.0 引入的集群资源管理系统。用户可以将各种服务框架部署在 YARN 上，由 YARN 进行统一地管理和资源分配。
 
-<div align="center"> <img width="600px"  src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/yarn-base.png"/> </div>
+<div align="center"> <img width="600px"  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/yarn-base.png"/> </div>
 
 
 
 ## 二、YARN架构
 
-<div align="center"> <img width="600px" src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/Figure3Architecture-of-YARN.png"/> </div>
+<div align="center"> <img width="600px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/Figure3Architecture-of-YARN.png"/> </div>
 
 ### 1. ResourceManager
 
@@ -47,7 +47,7 @@
 - 跟踪任务状态和进度，报告资源的使用情况和应用的进度信息；
 - 负责任务的容错。
 
-### 4. Contain
+### 4. Container
 
 `Container` 是 YARN 中的资源抽象，它封装了某个节点上的多维度资源，如内存、CPU、磁盘、网络等。当 AM 向 RM 申请资源时，RM 为 AM 返回的资源是用 `Container` 表示的。YARN 会为每个任务分配一个 `Container`，该任务只能使用该 `Container` 中描述的资源。`ApplicationMaster` 可在 `Container` 内运行任何类型的任务。例如，`MapReduce ApplicationMaster` 请求一个容器来启动 map 或 reduce 任务，而 `Giraph ApplicationMaster` 请求一个容器来运行 Giraph 任务。
 
@@ -57,7 +57,7 @@
 
 ## 三、YARN工作原理简述
 
-<div align="center"> <img src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/yarn工作原理简图.png"/> </div>
+<div align="center"> <img src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/yarn工作原理简图.png"/> </div>
 
 1. `Client` 提交作业到 YARN 上；
 
@@ -71,7 +71,7 @@
 
 ## 四、YARN工作原理详述
 
-<div align="center"> <img width="600px" src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/yarn工作原理.png"/> </div>
+<div align="center"> <img width="600px" src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/yarn工作原理.png"/> </div>
 
 
 
@@ -126,3 +126,6 @@ YARN 中的任务将其进度和状态 (包括 counter) 返回给应用管理器
 
    
 
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>

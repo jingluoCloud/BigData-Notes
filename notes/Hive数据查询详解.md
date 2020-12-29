@@ -194,9 +194,7 @@ SELECT deptno,SUM(sal) FROM emp GROUP BY deptno HAVING SUM(sal)>9000;
 
 ### 2.9 DISTRIBUTE BY
 
-默认情况下，MapReduce 程序会对 Map 输出结果的 Key 值进行散列，并均匀分发到所有 Reducer 上。如果想要把具有相同 Key 值的数据分发到同一个 Reducer 进行处理，这就需要使用 DISTRIBUTE BY 字句。
-
-需要注意的是，DISTRIBUTE BY 虽然能保证具有相同 Key 值的数据分发到同一个 Reducer，但是不能保证数据在 Reducer 上是有序的。情况如下：
+如果想要把具有相同 Key 值的数据分发到同一个 Reducer 进行处理，这可以使用 DISTRIBUTE BY 字句。需要注意的是，DISTRIBUTE BY 虽然能把具有相同 Key 值的数据分发到同一个 Reducer，但是不能保证数据在 Reducer 上是有序的。情况如下：
 
 把以下 5 个数据发送到两个 Reducer 上进行处理：
 
@@ -224,7 +222,7 @@ k4
 k3
 ```
 
-如果想让 Reducer 上的数据时有序的，可以结合 `SORT BY` 使用 (示例如下)，或者使用下面我们将要介绍的 CLUSTER BY。
+如果想让 Reducer 上的数据是有序的，可以结合 `SORT BY` 使用 (示例如下)，或者使用下面我们将要介绍的 CLUSTER BY。
 
 ```sql
 -- 将数据按照部门分发到对应的 Reducer 上处理
@@ -249,7 +247,7 @@ Hive 支持内连接，外连接，左外连接，右外连接，笛卡尔连接
 
 需要特别强调：JOIN 语句的关联条件必须用 ON 指定，不能用 WHERE 指定，否则就会先做笛卡尔积，再过滤，这会导致你得不到预期的结果 (下面的演示会有说明)。
 
-<div align="center"> <img width="600px"  src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/sql-join.jpg"/> </div>
+<div align="center"> <img width="600px"  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/sql-join.jpg"/> </div>
 
 ### 3.1 INNER JOIN
 
@@ -286,7 +284,7 @@ ON e.deptno = d.deptno;
 
 执行右连接后，由于 40 号部门下没有任何员工，所以此时员工信息为 NULL。这个查询可以很好的复述上面提到的——JOIN 语句的关联条件必须用 ON 指定，不能用 WHERE 指定。你可以把 ON 改成 WHERE，你会发现无论如何都查不出 40 号部门这条数据，因为笛卡尔运算不会有 (NULL, 40) 这种情况。
 
-<div align="center"> <img width="700px"   src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/hive-right-join.png"/> </div>
+<div align="center"> <img width="700px"   src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hive-right-join.png"/> </div>
 ### 3.4 FULL OUTER  JOIN 
 
 ```sql
@@ -394,3 +392,6 @@ SET hive.exec.mode.local.auto=true;
 2. [LanguageManual Joins](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Joins)
 3. [LanguageManual GroupBy](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+GroupBy)
 4. [LanguageManual SortBy](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+SortBy)
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>

@@ -98,10 +98,10 @@ object ScalaApp extends App {
   // 4.tail 和 head 可以结合使用
   list.tail.head
 
-  // 5.返回列表中的最后一个元素 与 head 相反
+  // 5.返回列表中除了最后一个元素之外的其他元素；与 tail 相反 这里输出 List(hadoop, spark)
   list.init
 
-  // 6.返回列表中除了最后一个元素之外的其他元素 与 tail 相反 这里输出 List(hadoop, spark)
+  // 6.返回列表中的最后一个元素 与 head 相反
   list.last
 
   // 7.使用下标访问元素
@@ -540,3 +540,6 @@ object ScalaApp extends App {
 
 1. Martin Odersky . Scala 编程 (第 3 版)[M] . 电子工业出版社 . 2018-1-1  
 2. 凯.S.霍斯特曼  . 快学 Scala(第 2 版)[M] . 电子工业出版社 . 2017-7
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>

@@ -48,7 +48,7 @@ export PATH=$HIVE_HOME/bin:$PATH
 
 **1. hive-env.sh**
 
-进入安装目录下的 `conf/` 目录，拷贝 Hive 的环境配置模板 `flume-env.sh.template`
+进入安装目录下的 `conf/` 目录，拷贝 Hive 的环境配置模板 `hive-env.sh.template`
 
 ```shell
 cp hive-env.sh.template hive-env.sh
@@ -98,7 +98,7 @@ HADOOP_HOME=/usr/app/hadoop-2.6.0-cdh5.15.2
 
 将 MySQL 驱动包拷贝到 Hive 安装目录的 `lib` 目录下, MySQL 驱动的下载地址为：https://dev.mysql.com/downloads/connector/j/  , 在本仓库的[resources](https://github.com/heibaiying/BigData-Notes/tree/master/resources) 目录下我也上传了一份，有需要的可以自行下载。
 
-<div align="center"> <img  src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/hive-mysql.png"/> </div>
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hive-mysql.png"/> </div>
 
 
 
@@ -123,11 +123,11 @@ HADOOP_HOME=/usr/app/hadoop-2.6.0-cdh5.15.2
 # hive
 ```
 
-<div align="center"> <img  src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/hive-install-2.png"/> </div>
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hive-install-2.png"/> </div>
 
 在 Mysql 中也能看到 Hive 创建的库和存放元数据信息的表
 
-<div align="center"> <img  src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/hive-mysql-tables.png"/> </div>
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hive-mysql-tables.png"/> </div>
 
 
 
@@ -178,4 +178,7 @@ Hive 内置了 HiveServer 和 HiveServer2 服务，两者都允许客户端使�
 # beeline -u jdbc:hive2://hadoop001:10000 -n root
 ```
 
-<div align="center"> <img src="https://github.com/heibaiying/BigData-Notes/blob/master/pictures/hive-beeline-cli.png"/> </div>
+<div align="center"> <img src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/hive-beeline-cli.png"/> </div>
+
+
+<div align="center"> <img  src="https://gitee.com/heibaiying/BigData-Notes/raw/master/pictures/weixin-desc.png"/> </div>
